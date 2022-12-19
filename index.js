@@ -1,0 +1,1 @@
+document.getElementById("count-el").innerText = 10 // Use js to get element by an id
