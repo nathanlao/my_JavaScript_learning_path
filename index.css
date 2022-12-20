@@ -17,3 +17,23 @@ h2 {
     margin-top: 0;
     margin-bottom: 10px;
 }
+
+button {
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:white;
+    font-weight: bold;
+    width: 200px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* # is id selector (target a single specific element with a unique id) in css */
+#increment-btn {
+    background: darkred;
+}
+
+#save-btn {
+    background: darkgreen;
+}
