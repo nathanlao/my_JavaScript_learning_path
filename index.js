@@ -30,3 +30,8 @@ console.log(bonusPoints)
 
 bonusPoints = bonusPoints + 45
 console.log(bonusPoints)
+
+// Create a functnon for click event listener
+function increment() {
+    console.log("The button is clicked")
+}
