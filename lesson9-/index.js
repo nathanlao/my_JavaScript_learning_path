@@ -1,5 +1,4 @@
 // Setting up the count down
-
 function countdown() {
     console.log(5)
     console.log(4)
@@ -16,3 +15,15 @@ function myPrintFunction() {
 }
 
 myPrintFunction()
+
+// Global Scope variable
+let lap1 = 10
+let lap2 = 20
+let lap3 = 30
+// Create a function that logs out the sum 
+function logSum() {
+    let total = lap1 + lap2 + lap3
+    console.log(total)
+}
+
+logSum()
