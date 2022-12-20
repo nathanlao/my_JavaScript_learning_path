@@ -36,9 +36,13 @@
 //     console.log("The button is clicked")
 // }
 
+// Asking for html element
+let countEl = document.getElementById("count-el") // pass in argument
 let count = 0
 // Create a functnon for click event listener
 function incrementCount() {
     count = count + 1
+    // Text inside of tags, we want it to be the count
+    countEl.innerText = count
     console.log(count)
 }
