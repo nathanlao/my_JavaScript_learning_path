@@ -6,7 +6,12 @@ let messageToUser = message +  ", " + username + "!"
 console.log(messageToUser) 
 
 // Create my string
+// let myGreeting = greeting + myName
+// console.log(myGreeting)
+
+
+// Render the message on HTML page
+let welcomeEl = document.getElementById("welcome-el")
 let myName = "Nathan"
 let greeting = "Hi, my name is "
-let myGreeting = greeting + myName
-console.log(myGreeting)
+welcomeEl.innerText = greeting + myName
