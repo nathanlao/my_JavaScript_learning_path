@@ -47,17 +47,23 @@
 
 // Asking for html element
 let countEl = document.getElementById("count-el") // pass in argument
+let saveEl = document.getElementById("save-el")
+
 let count = 0
 // Create a functnon for incrementing the count (click event listener)
 function incrementCount() {
     count += 1
     // Text inside of tags, we want it to be the count
-    countEl.innerText = count
+    countEl.textContent = count // Render the variable using innerText, but innerText is 
+                                // computationally expensive, use textContent instead
+    // Note: innerText is aware of styling and wont return the text of "hidden" elements
     console.log(count)
 }
 
 // Create a function for saving the count
 function save() {
+    let countRecordStr = count + " - "
+    saveEl.textContent += countRecordStr // textContent: gets the content of all elements
     console.log(count)
 }
 
