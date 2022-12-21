@@ -44,13 +44,20 @@
 * Model: A representation -> HTML element, then a JS model (the representation that have 
 *        over the element in JS)
 */
+
 // Asking for html element
 let countEl = document.getElementById("count-el") // pass in argument
 let count = 0
-// Create a functnon for click event listener
+// Create a functnon for incrementing the count (click event listener)
 function incrementCount() {
     count = count + 1
     // Text inside of tags, we want it to be the count
     countEl.innerText = count
     console.log(count)
 }
+
+// Create a function for saving the count
+function save() {
+    console.log(count)
+}
+
