@@ -36,6 +36,14 @@
 //     console.log("The button is clicked")
 // }
 
+/*
+* DOM: Document Object Model (aka how you use JavaScript to modify a website)
+* Document: Interacting with HTML document
+* Object: Document keyword in JS is of the data type object -> Take the HTML do and shoved
+*         it into a JS object.
+* Model: A representation -> HTML element, then a JS model (the representation that have 
+*        over the element in JS)
+*/
 // Asking for html element
 let countEl = document.getElementById("count-el") // pass in argument
 let count = 0
