@@ -57,13 +57,16 @@ function incrementCount() {
     countEl.textContent = count // Render the variable using innerText, but innerText is 
                                 // computationally expensive, use textContent instead
     // Note: innerText is aware of styling and wont return the text of "hidden" elements
-    console.log(count)
+
+    // console.log(count)
 }
 
 // Create a function for saving the count
 function save() {
     let countRecordStr = count + " - "
     saveEl.textContent += countRecordStr // textContent: gets the content of all elements
-    console.log(count)
+    // console.log(count)
+    countEl.textContent = 0
+    count = 0
 }
 
