@@ -1,5 +1,5 @@
 let firstCard = 10
-let secondCard = 11
+let secondCard = 4
 let sum = firstCard + secondCard
 let hasBlackJack = false
 let isAlive = true
@@ -16,6 +16,10 @@ let cardsEl = document.getElementById("cards-el")
 // let sumEl = document.querySelector("#sum-el")
 
 function startGame() {
+    renderGame()
+}
+
+function renderGame() {
     // render the cards on the page
     cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
 
@@ -38,5 +42,8 @@ function startGame() {
 
 function newCard() {
     console.log("Drawing a new card")
+    let newCard = 7
+    sum += newCard
+    renderGame()
 }
 
