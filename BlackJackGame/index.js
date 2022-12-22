@@ -36,3 +36,7 @@ function startGame() {
     messagEl.textContent = message
 }
 
+function newCard() {
+    console.log("Drawing a new card")
+}
+
