@@ -46,7 +46,7 @@
 */
 
 // Asking for html element
-let countEl = document.getElementById("count-el") // pass in argument
+let countEl = document.getElementById("count-el") // pass in argument(id) as a string
 let saveEl = document.getElementById("save-el")
 
 let count = 0
