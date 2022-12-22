@@ -6,8 +6,18 @@ let isAlive = true
 let message = ""
 
 let messagEl = document.getElementById("message-el")
+let sumEl = document.getElementById("sum-el")
+
+// New way of grabbing elementes from the DOM: querySelector
+// A more dynamic method, need to pass in #(id selector)
+// Tell querySelector (selector -> CSS selector) that is the element with ID 
+
+// let sumEl = document.querySelector("#sum-el")
 
 function startGame() {
+    // render the sum on the page
+    sumEl.textContent = "Sum: " + sum
+
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
     } else if(sum === 21) { // Is the sum strictly/exactly equal to 21?
