@@ -7,6 +7,7 @@ let message = ""
 
 let messagEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
+let cardsEl = document.getElementById("cards-el")
 
 // New way of grabbing elementes from the DOM: querySelector
 // A more dynamic method, need to pass in #(id selector)
@@ -15,6 +16,9 @@ let sumEl = document.getElementById("sum-el")
 // let sumEl = document.querySelector("#sum-el")
 
 function startGame() {
+    // render the cards on the page
+    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+
     // render the sum on the page
     sumEl.textContent = "Sum: " + sum
 
@@ -28,7 +32,7 @@ function startGame() {
         console.log(message)
         isAlive = false
     }
-    // Display the message
+    // render the message
     messagEl.textContent = message
 }
 
