@@ -5,17 +5,20 @@ let hasBlackJack = false
 let isAlive = true
 let message = ""
 
+let messagEl = document.getElementById("message-el")
+
 function startGame() {
     if (sum <= 20) {
-        message = "Do you want to draw a new card? 😉"
+        message = "Do you want to draw a new card?"
     } else if(sum === 21) { // Is the sum strictly/exactly equal to 21?
-        message = "Wohoo! You've got Blackjack! 😆"
+        message = "Wohoo! You've got Blackjack!"
         hasBlackJack = true
     } else {
-        message = "You're out of the game! 😰"
+        message = "You're out of the game!"
         console.log(message)
         isAlive = false
     }
-    console.log(message)
+    // Display the message
+    messagEl.textContent = message
 }
 
