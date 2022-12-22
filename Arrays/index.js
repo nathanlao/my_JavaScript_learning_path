@@ -8,6 +8,11 @@ let featurePosts = [
 let newFeature = "four"
 featurePosts.push(newFeature)
 
+// Use for loop
+for (let i = 0; i < featurePosts.length; i += 1) {
+    console.log(featurePosts[i])
+}
+
 console.log( featurePosts.length )
 
 let myLinkin = [
