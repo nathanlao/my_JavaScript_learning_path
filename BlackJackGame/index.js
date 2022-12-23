@@ -22,7 +22,10 @@ function startGame() {
 
 function renderGame() {
     // render the first and second card on the page
-    cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1]
+    cardsEl.textContent = "Cards: "
+    for ( let i = 0; i < cards.length; i++ ) {
+        cardsEl.textContent += cards[i] + " "
+    }
 
     // render the sum on the page
     sumEl.textContent = "Sum: " + sum
