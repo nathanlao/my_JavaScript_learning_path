@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    background: #5f9341;
+    color:aliceblue;
+    border: none;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* same as -> padding: 10px 20px; */
+}
+
+input {
+    /* Take up all the space inside the container */
+    width: 100%;
+    padding: 10px;
+    /* size the box long its border */
+    box-sizing: border-box;
+    border: 1px solid #5f9341;
+    margin-bottom: 4px;
+}
