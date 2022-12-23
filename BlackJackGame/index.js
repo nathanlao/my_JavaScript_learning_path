@@ -1,3 +1,15 @@
+// Creating an player Object
+let player = {
+    name: "Nathan",
+    chips: 100,
+    // create methods on object, methods attached to that object
+    // ex. console.log, document.getElementById, Math.Random
+    sayHello: function() {
+        console.log("Hello!")
+    }
+}
+
+
 let cards = [] // Creating arrays - ordered list of items
 let sum = 0
 let hasBlackJack = false
@@ -15,13 +27,7 @@ let playerEl = document.getElementById("player-el")
 
 // let sumEl = document.querySelector("#sum-el")
 
-
-// Creating an Object
-let player = {
-    name: "Nathan",
-    chips: 100
-}
-
+// render the player's name and chip
 playerEl.textContent = player.name + ": $" + player.chips
 
 function getRandomCard() {
