@@ -7,12 +7,22 @@ let message = ""
 let messagEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
+let playerEl = document.getElementById("player-el")
 
 // New way of grabbing elementes from the DOM: querySelector
 // A more dynamic method, need to pass in #(id selector)
 // Tell querySelector (selector -> CSS selector) that is the element with ID 
 
 // let sumEl = document.querySelector("#sum-el")
+
+
+// Creating an Object
+let player = {
+    name: "Nathan",
+    chips: 100
+}
+
+playerEl.textContent = player.name + ": $" + player.chips
 
 function getRandomCard() {
     let randomNumber = Math.floor( Math.random() * 13) + 1 // Range from 1 to 13
