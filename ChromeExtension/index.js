@@ -32,7 +32,14 @@ function renderLeads() {
         // render <li> with innerHTML
         // add ancor tag <a> -> defines a hyperlink
         // make href open in new tab -> target blank
-        listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
+        // Use template strings/literals
+        listItems += `
+            <li>
+                <a target='_blank' href='${myLeads[i]}'>
+                    ${myLeads[i]}
+                </a>
+            </li>
+            `
         
         // new way of innerHTML:
         // create list element
