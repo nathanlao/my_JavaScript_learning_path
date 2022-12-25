@@ -21,16 +21,19 @@ inputBtn.addEventListener("click", function() {
 })
 
 // render the leads in the unordered list and use <li> tags
+let listItems = ""
 for (let i = 0; i < myLeads.length; i++) {
     // old way
     // render <li> with innerHTML
-    // ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
+    listItems += "<li>" + myLeads[i] + "</li>"
     
     // new way of innerHTML:
     // create list element
-    const li = document.createElement("li")
-    // set text content
-    li.textContent = myLeads[i]
-    // append to ul
-    ulEl.append(li)
+    // const li = document.createElement("li")
+    // // set text content
+    // li.textContent = myLeads[i]
+    // // append to ul
+    // ulEl.append(li)
 }
+// DOM manipulation has a cost, do it one time better than three times in the for loop
+ulEl.innerHTML = listItems
