@@ -18,6 +18,8 @@ const ulEl = document.getElementById("ul-el")
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
 
+    // clear out the input field
+    inputEl.value = ""
     // render the leads
     renderLeads()
 })
@@ -28,7 +30,9 @@ function renderLeads() {
     for (let i = 0; i < myLeads.length; i++) {
         // old way
         // render <li> with innerHTML
-        listItems += "<li>" + myLeads[i] + "</li>"
+        // add ancor tag <a> -> defines a hyperlink
+        // make href open in new tab -> target blank
+        listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
         
         // new way of innerHTML:
         // create list element
