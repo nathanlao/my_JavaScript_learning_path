@@ -39,7 +39,7 @@ function renderLeads() {
                     ${myLeads[i]}
                 </a>
             </li>
-            `
+        `
         
         // new way of innerHTML:
         // create list element
