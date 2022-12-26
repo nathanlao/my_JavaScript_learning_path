@@ -8,13 +8,18 @@ body {
 button {
     background: #5f9341;
     color:aliceblue;
-    border: none;
+    border: 1px solid #5f9341;
     font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
     /* same as -> padding: 10px 20px; */
+}
+
+#delete-btn {
+    background:white;
+    color:#5f9341
 }
 
 input {
