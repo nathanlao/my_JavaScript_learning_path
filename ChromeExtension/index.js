@@ -30,37 +30,13 @@ const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
 // check if leadsFromLocalStorage is truthy
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
 }
 
-// double click event
-deleteBtn.addEventListener("dblclick", function() {
-    // clear the localStorage
-    localStorage.clear() 
-    // clear myLeads array
-    myLeads = []
-    // clear DOM
-    renderLeads()
-})
-
-// 1st param: "click" event, 2nd: do sth when user click
-inputBtn.addEventListener("click", function() {
-    myLeads.push(inputEl.value)
-
-    // clear out the input field
-    inputEl.value = ""
-    
-    // Save myLeads array to localStorage
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
-
-    // render the leads
-    renderLeads()
-})
-
-function renderLeads() {
+function render(leads) {
     // render the leads in the unordered list and use <li> tags
     let listItems = ""
-    for (let i = 0; i < myLeads.length; i++) {
+    for (let i = 0; i < leads.length; i++) {
         // old way
         // render <li> with innerHTML
         // add ancor tag <a> -> defines a hyperlink
@@ -68,8 +44,8 @@ function renderLeads() {
         // Use template strings/literals
         listItems += `
             <li>
-                <a target='_blank' href='${myLeads[i]}'>
-                    ${myLeads[i]}
+                <a target='_blank' href='${leads[i]}'>
+                    ${leads[i]}
                 </a>
             </li>
         `
@@ -85,3 +61,27 @@ function renderLeads() {
     // DOM manipulation has a cost, do it one time better than three times in the for loop
     ulEl.innerHTML = listItems
 }
+
+// double click event
+deleteBtn.addEventListener("dblclick", function() {
+    // clear the localStorage
+    localStorage.clear() 
+    // clear myLeads array
+    myLeads = []
+    // clear DOM
+    render(myLeads)
+})
+
+// 1st param: "click" event, 2nd: do sth when user click
+inputBtn.addEventListener("click", function() {
+    myLeads.push(inputEl.value)
+
+    // clear out the input field
+    inputEl.value = ""
+    
+    // Save myLeads array to localStorage
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+
+    // render the leads
+    render(myLeads)
+})
