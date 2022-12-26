@@ -1,9 +1,12 @@
-let myLeads = `["www.cool.com"]` // Turn array to string (everything in localStorage has to be string)
+let myLeads = [] // `["example"]` -> Turn array to string (everything in localStorage has to be string)
 
-myLeads = JSON.parse(myLeads) // turn string into an array
-myLeads.push("new") // push new value to array
-myLeads = JSON.stringify(myLeads) // turn array to string 
-console.log(typeof myLeads) // typeof to verify that its a string
+// myLeads = JSON.parse(myLeads) // turn string into an array
+// myLeads.push("new") // push new value to array
+// myLeads = JSON.stringify(myLeads) // turn array to string 
+// console.log(typeof myLeads) // typeof to verify that its a string
+
+let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
+console.log(leadsFromLocalStorage)
 
 // const: can not be reassigned, If possible use const
 const inputEl = document.getElementById("input-el")
@@ -18,7 +21,7 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 
-// Persisting data across each refresh
+// Persisting data across each refresh (use of localStorage)
 // setItem: 1st -> key , 2nd -> value
 // localStorage.setItem("myLeads", "www.example.com")
 // console.log( localStorage.getItem("myLeads"))
@@ -30,6 +33,10 @@ inputBtn.addEventListener("click", function() {
 
     // clear out the input field
     inputEl.value = ""
+    
+    // Save myLeads array to localStorage
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+
     // render the leads
     renderLeads()
 })
