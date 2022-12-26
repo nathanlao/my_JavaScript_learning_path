@@ -18,6 +18,7 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
+const tabBtn = document.getElementById("tab-btn")
 
 // Persisting data across each refresh (use of localStorage)
 // setItem: 1st -> key , 2nd -> value
@@ -61,6 +62,25 @@ function render(leads) {
     // DOM manipulation has a cost, do it one time better than three times in the for loop
     ulEl.innerHTML = listItems
 }
+
+// arrays of objects
+// const tabs = [
+//     {url: "www.example.com"}
+// ]
+
+tabBtn.addEventListener("click", function() {
+    // Grab the URL of current tab! (use chrome API to get the tab)
+    // object chrome --> use query() to get tabs object
+    // active -> active tab
+    // currentWindow -> want the current active window
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        // save the url 
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        render(myLeads)
+    })
+
+})
 
 // double click event
 deleteBtn.addEventListener("dblclick", function() {
