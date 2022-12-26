@@ -1,4 +1,9 @@
-let myLeads = []
+let myLeads = `["www.cool.com"]` // Turn array to string (everything in localStorage has to be string)
+
+myLeads = JSON.parse(myLeads) // turn string into an array
+myLeads.push("new") // push new value to array
+myLeads = JSON.stringify(myLeads) // turn array to string 
+console.log(typeof myLeads) // typeof to verify that its a string
 
 // const: can not be reassigned, If possible use const
 const inputEl = document.getElementById("input-el")
@@ -13,6 +18,11 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 
+// Persisting data across each refresh
+// setItem: 1st -> key , 2nd -> value
+// localStorage.setItem("myLeads", "www.example.com")
+// console.log( localStorage.getItem("myLeads"))
+// localStorage.clear()
 
 // 1st param: "click" event, 2nd: do sth when user click
 inputBtn.addEventListener("click", function() {
