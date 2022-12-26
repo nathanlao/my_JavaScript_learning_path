@@ -5,9 +5,6 @@ let myLeads = [] // `["example"]` -> Turn array to string (everything in localSt
 // myLeads = JSON.stringify(myLeads) // turn array to string 
 // console.log(typeof myLeads) // typeof to verify that its a string
 
-let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
-console.log(leadsFromLocalStorage)
-
 // const: can not be reassigned, If possible use const
 const inputEl = document.getElementById("input-el")
 
@@ -26,6 +23,14 @@ const ulEl = document.getElementById("ul-el")
 // localStorage.setItem("myLeads", "www.example.com")
 // console.log( localStorage.getItem("myLeads"))
 // localStorage.clear()
+
+let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
+
+// check if leadsFromLocalStorage is truthy
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
 
 // 1st param: "click" event, 2nd: do sth when user click
 inputBtn.addEventListener("click", function() {
