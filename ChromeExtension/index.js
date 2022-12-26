@@ -17,6 +17,7 @@ const inputEl = document.getElementById("input-el")
 // hook a event listener onto btn
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
+const deleteBtn = document.getElementById("delete-btn")
 
 // Persisting data across each refresh (use of localStorage)
 // setItem: 1st -> key , 2nd -> value
@@ -24,13 +25,23 @@ const ulEl = document.getElementById("ul-el")
 // console.log( localStorage.getItem("myLeads"))
 // localStorage.clear()
 
-let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
+const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
 
 // check if leadsFromLocalStorage is truthy
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
     renderLeads()
 }
+
+// double click event
+deleteBtn.addEventListener("dblclick", function() {
+    // clear the localStorage
+    localStorage.clear() 
+    // clear myLeads array
+    myLeads = []
+    // clear DOM
+    renderLeads()
+})
 
 // 1st param: "click" event, 2nd: do sth when user click
 inputBtn.addEventListener("click", function() {
