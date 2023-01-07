@@ -1,0 +1,177 @@
+body {
+    font-size: 16px;
+    color: #2b283a;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/* typography */
+
+h1, h3 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 36px;
+    color: #5bc0be;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.section-two-header {
+    color: #5bc0be;
+}
+
+h3 {
+    font-size: 20px;
+    color: #86bbbd;
+}
+
+p {
+    line-height: 23px;
+}
+
+/* layout */
+
+header, 
+section, 
+footer {
+    padding: 45px 0;
+}
+
+header, .section-two {
+    background: #5f506b;
+}
+
+.section-two {
+    color: whitesmoke;
+}
+
+.container {
+    width: 620px;
+    margin: 0 auto;
+}
+
+.main-img {
+    width: 100%;
+}   
+
+.section-two-img {
+    width: 300px;
+    border-radius: 4.6px;
+}
+
+.section-two-img-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    color: #5f506b;
+}
+
+/* links */
+
+a {
+    color:#ef5839;
+    text-decoration: underline dotted;
+}
+
+a:hover, a:active {
+    color: #d4b44c;
+}
+
+.btn {
+    padding: 10px 19px;
+    border-radius: 4.6px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block; /* a (links) are inline element hence can not set margin */
+    margin: 10px;
+}
+
+.btn-dark {
+    background: #5f506b;
+    color: whitesmoke;
+}
+
+.btn-mid {
+    background: #86bbbd;
+    color: #5f506b;
+}
+
+.btn-light {
+    background: whitesmoke;
+    color: #5f506b;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    background: #f3e885;
+    color: #2b283a;
+}
+
+/* modal */
+
+.modal {
+    /* make the modal sit on top of the other content */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    /* hide the modal */
+    display: none;
+
+    height: 420px;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 2px #666;
+    background-color: #212529;
+    color: whitesmoke;
+}
+
+.modal-inner{
+    width: 290px;
+    margin: 0 auto;
+}
+
+/* modal buttons */
+
+.close-modal-btn-container{
+    text-align: right;
+    margin: 9px;
+}
+
+.modal-close-btn {
+    font-size: 22px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: whitesmoke;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:active{
+    color: red;
+    cursor: pointer;
+}
+
+.modal-close-btn:disabled{
+    color: whitesmoke;
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.modal-text{
+    height: 140px;
+    line-height: 23px;
+    margin-bottom: 0;
+}
