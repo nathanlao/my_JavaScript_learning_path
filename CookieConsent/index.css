@@ -214,3 +214,14 @@ input {
     line-height: 28px;
     font-size: 18px;
 }
+
+.thank-gif {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.thank-gif img {
+    box-shadow: 1px 1px 3px #999;
+    border-radius: 5px;
+}

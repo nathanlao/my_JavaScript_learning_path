@@ -32,4 +32,15 @@ consentForm.addEventListener('submit', function(event) {
     setTimeout(function() {
         document.getElementById('upload-text').textContent = "Making the sale..."
     }, 1500)
+
+    setTimeout(function() {
+        document.getElementById('modal-inner').innerHTML = 
+        `
+        <h2>Thank you for accepting! </h2>
+        <p>We just receive your information.</p>
+        <div class="thank-gif">
+            <img src="images/thank.gif">
+        </div>
+        `
+    }, 3000)
 })
