@@ -176,6 +176,18 @@ a:hover, a:active {
     margin-bottom: 0;
 }
 
+.modal-choice-btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 8px 16px;
+}
+
+.modal-btn {
+    padding: 10px 24px;
+    cursor: pointer;
+}
+
 /* modal inputs */
 
 input {
