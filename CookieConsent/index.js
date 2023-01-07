@@ -14,7 +14,7 @@ modalCloseBtn.addEventListener('click', function() {
     modal.style.display = "none"
 })
 
-// Prevent the default behaviou that trigger the refresh
+// Prevent the default behaviour that trigger the refresh
 consentForm.addEventListener('submit', function(event) {
     event.preventDefault()
     // console.log("form submited")
@@ -22,10 +22,14 @@ consentForm.addEventListener('submit', function(event) {
     `
     <div class="modal-inner-loading">
         <img src="images/loading.svg" class="loading">
-        <p class="uploadText" id="uploadText">
+        <p class="upload-text" id="upload-text">
             Uploading your data to the dark web...
         </p>
     </div>
     `
     modalText.innerHTML = string
+
+    setTimeout(function() {
+        document.getElementById('upload-text').textContent = "Making the sale..."
+    }, 1500)
 })
