@@ -61,7 +61,7 @@
 				<p class="modal-text" id="modal-text">We have a strict policy on tracking and spamming: 
                     we'll definitely track you, and we'll definitely spam you. To use this site, 
                     enter your name and email address and accept our ridiculous terms and conditions.</p>				
-                <form>
+                <form id="consent-form">
                     <input 
                         type="text"
                         id="fullName"
@@ -78,7 +78,9 @@
                         />
                     <div class="modal-choice-btns" id="modal-choice-btns">
                         <button type="submit" class="modal-btn">Accept</button>
-                        <button class="modal-btn">Decline</button>
+                        <!-- Give button a type "button", 
+                            stop the default behaviour as a submit type -->
+                        <button type="button" class="modal-btn">Decline</button>
                     </div>
                 </form>
             </div>
