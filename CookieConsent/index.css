@@ -143,6 +143,10 @@ a:hover, a:active {
     margin: 0 auto;
 }
 
+.modal-inner-loading {
+    text-align: center;
+}
+
 /* modal buttons */
 
 .close-modal-btn-container{
@@ -172,6 +176,7 @@ a:hover, a:active {
 
 .modal-text{
     height: 140px;
+    font-size: 18px;
     line-height: 23px;
     margin-bottom: 0;
 }
@@ -196,4 +201,16 @@ input {
     padding: 10px;
     border-radius: 3px;
     border: 1px solid #212529;
+}
+
+/* modal after submit */
+
+.loading {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.uploadText {
+    line-height: 28px;
+    font-size: 18px;
 }
