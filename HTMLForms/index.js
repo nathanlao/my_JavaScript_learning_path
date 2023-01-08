@@ -9,4 +9,10 @@ loginForm.addEventListener('submit', function(event){
     // Use FormData to get object from a submit event
     // FormData is a constructor functoin -> need a 'new' keyword
     const loginFormData = new FormData(loginForm)
+
+    // Take the object we created (FormData), and get the name field from the object
+    const name = loginFormData.get('astronautName')
+    const email = loginFormData.get('astronautEmail')
+    const password = loginFormData.get('astronautPassword')
+    console.log(name, email, password)
 })
