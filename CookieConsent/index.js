@@ -37,7 +37,7 @@ consentForm.addEventListener('submit', function(event) {
         document.getElementById('modal-inner').innerHTML = 
         `
         <h2>Thank you for accepting! </h2>
-        <p>We just receive your information.</p>
+        <p>We just received your information.</p>
         <div class="thank-gif">
             <img src="images/thank.gif">
         </div>
