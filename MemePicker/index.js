@@ -10,8 +10,11 @@ function getEmotionsArray(cats){
 
         // nested "for of" to loop emotions from the emotionTags array in each object.
         for (let emotion of cat.emotionTags) {
-            // push each emotion to the array
-            emotionArray.push(emotion)
+            // Does emotionArray include the emtion aleady?
+            if (!emotionArray.includes(emotion)){
+                // push each emotion to the array
+                emotionArray.push(emotion)
+            }
         }
     }
     return emotionArray
