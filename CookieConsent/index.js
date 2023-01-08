@@ -17,6 +17,13 @@ modalCloseBtn.addEventListener('click', function() {
 // Prevent the default behaviour that trigger the refresh
 consentForm.addEventListener('submit', function(event) {
     event.preventDefault()
+
+    // Create a new instance of FormData to get the object from submit event
+    const consentFormData = new FormData(consentForm)
+
+    // Extract the data from the object
+    const name = consentFormData.get('fullName')
+
     // console.log("form submited")
     let string = 
     `
@@ -36,7 +43,7 @@ consentForm.addEventListener('submit', function(event) {
     setTimeout(function() {
         document.getElementById('modal-inner').innerHTML = 
         `
-        <h2>Thank you for accepting! </h2>
+        <h2>Thank you, <span class="modal-display-name">${name}</span> for accepting our consent!</h2>
         <p>We just received your information.</p>
         <div class="thank-gif">
             <img src="images/thank.gif">
