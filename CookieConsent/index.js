@@ -49,5 +49,8 @@ consentForm.addEventListener('submit', function(event) {
             <img src="images/thank.gif">
         </div>
         `
+
+        // Make the close button usable when final msg display
+        modalCloseBtn.disabled = false
     }, 3000)
 })
