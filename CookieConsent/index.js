@@ -2,6 +2,8 @@ const modal = document.getElementById('modal')
 const modalCloseBtn = document.getElementById('modal-close-btn')
 const consentForm = document.getElementById('consent-form')
 const modalText = document.getElementById('modal-text')
+const modalDeclineBtn = document.getElementById('modal-decline-btn')
+const modalChoiceBtns = document.getElementById('modal-choice-btns')
 
 // log out the msg after 1.5 sec delay
 setTimeout(function() {
@@ -12,6 +14,13 @@ setTimeout(function() {
 // close the modal when btn is clicked (change the element.style. ...)
 modalCloseBtn.addEventListener('click', function() {
     modal.style.display = "none"
+})
+
+// mouseenter -> cursor hover and event is triggered
+modalDeclineBtn.addEventListener('mouseenter', function() {
+    // access modalChoiceBtns' classList(collection of class attributes) and 
+    // toggle the CSS class on classList
+    modalChoiceBtns.classList.toggle('modal-choice-btns-reverse')
 })
 
 // Prevent the default behaviour that trigger the refresh

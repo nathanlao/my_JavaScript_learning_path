@@ -193,6 +193,10 @@ a:hover, a:active {
     cursor: pointer;
 }
 
+.modal-choice-btns-reverse {
+    flex-direction: row-reverse;
+}
+
 /* modal inputs */
 
 input {
