@@ -6,17 +6,6 @@ const gifCheckBox = document.getElementById('gifs-only-option')
 
 getImageBtn.addEventListener('click', getMatchingCatsArray)
 
-function getMatchingCatsArray() {
-    const isGif = gifCheckBox.checked
-    console.log(isGif)
-
-    if (document.querySelector('input[type="radio"]:checked')) {
-        // querySelector allows specfic pseudo selector
-        const checkedRadio = document.querySelector('input[type="radio"]:checked').value
-        console.log(checkedRadio)
-    }
-}
-
 // event listerner detects the button 'change' and get the id (by calling function)
 emotionRadios.addEventListener('change', highlightCheckedOption)
 
@@ -29,6 +18,28 @@ function highlightCheckedOption(event) {
     }
 
     document.getElementById(event.target.id).parentElement.classList.add('highlight')
+}
+
+function getMatchingCatsArray() {
+    
+    if (document.querySelector('input[type="radio"]:checked')) {
+        // Get radio checked value and if the gif checkbox is checked
+        
+        // querySelector allows specfic pseudo selector
+        const checkedRadio = document.querySelector('input[type="radio"]:checked').value
+        const isGif = gifCheckBox.checked
+
+        // Use filter to find matches in the array of catsData objects
+        const matchingCatsArray = catsData.filter(function(cat) {
+            // gif box is checked?
+            if (isGif) {
+                return cat.emotionTags.includes(checkedRadio) && cat.isGif
+            } else {
+                return cat.emotionTags.includes(checkedRadio)
+            }
+        })
+        return matchingCatsArray
+    }
 }
 
 // Set up a "for of" in getEmotionsArray to iterate over the data.
