@@ -6,6 +6,13 @@ const emotionRadios = document.getElementById('emotion-radios')
 emotionRadios.addEventListener('change', highlightCheckedOption)
 
 function highlightCheckedOption(event) {
+    // Grab the whole class with 'radio' and loop thru, remove the 'highlight' class
+    // radiosArray is actually a HTML collection
+    const radiosArray = document.getElementsByClassName('radio')
+    for (let radio of radiosArray) {
+        radio.classList.remove('highlight')
+    }
+
     document.getElementById(event.target.id).parentElement.classList.add('highlight')
 }
 
