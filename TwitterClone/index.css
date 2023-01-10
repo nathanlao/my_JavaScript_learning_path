@@ -57,6 +57,46 @@ button {
     border-radius: 20px;
 }
 
+/* tweet */
+
+.tweet {
+    width: 100%;
+    margin: 15px 0;
+    padding: 20px 0 0 0;
+    border-top: 1px solid lightgray;
+}
+
+.tweet-inner {
+    display: flex;
+    gap:10px;
+    align-items: flex-start;
+}
+
+.handle {
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #555;
+}
+
+.tweet-text {
+    font-size: 14px;
+    width: 207px;
+    line-height: 20px;
+}
+
+.tweet-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    width: 160px;
+}
+
+.tweet-detail {
+    display: flex;
+    gap: 4px;
+}
+
 /* images */
 
 .twitter-logo {
