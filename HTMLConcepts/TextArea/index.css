@@ -1,0 +1,8 @@
+textarea {
+    width: 239px;
+    height: 50px;
+    margin: 0px;
+    padding: 5px;
+    /* Disable resize feature: user can not resize the textarea */
+    resize: none;
+}
