@@ -12,6 +12,15 @@ h1 {
     font-size: 20px;
 }
 
+i{
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.fa-solid {
+    color: #999;
+}
+
 
 /* layout */
 
@@ -89,12 +98,12 @@ button {
     display: flex;
     justify-content: space-between;
     font-size: 13px;
-    width: 160px;
+    width: 100%;
 }
 
 .tweet-detail {
     display: flex;
-    gap: 4px;
+    gap: 5px;
 }
 
 /* images */
