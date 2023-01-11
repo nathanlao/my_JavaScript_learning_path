@@ -2,9 +2,9 @@ export const tweetsData = [
     {
         handle: `@arsenal_memes2 💎`,
         profilePic: `images/arsenal.png`,
-        likes: 27,
-        retweets: 10,
-        tweetText: `Is there any other club in history that has spent $350M in on yeaer and gotten worse?`,
+        likes: 227,
+        retweets: 12,
+        tweetText: `Is there any other club in history that has spent $350M in one year and gotten worse?`,
         replies: [],
         isLiked: false,
         isRetweeted: false,
@@ -13,8 +13,8 @@ export const tweetsData = [
     {
         handle: `@Elon ✅`,
         profilePic: `images/musk.png`,
-        likes: 6500,
-        retweets: 234,
+        likes: 7591,
+        retweets: 2834,
         tweetText: `I need volunteers for a one-way mission to Mars 🪐. No experience necessary🚀`,
         replies: [
                   {
