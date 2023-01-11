@@ -1,11 +1,5 @@
 import { tweetsData } from "./data.js"
-
-const tweetBtn = document.getElementById("tweet-btn")
-const tweetInput = document.getElementById("tweet-input")
-
-tweetBtn.addEventListener('click', function() {
-    console.log(tweetInput.value)
-})
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid'
 
 // Cover entire browser page and identify which icon is cliced
 document.addEventListener('click', function(e) {
@@ -16,6 +10,8 @@ document.addEventListener('click', function(e) {
         handleRetweetClick(e.target.dataset.retweet)
     } else if (e.target.dataset.reply) {
         handleReplyClick(e.target.dataset.reply)
+    } else if (e.target.id === 'tweet-btn') {
+        handleTweetBtnClick()
     }
 })
 
@@ -50,6 +46,29 @@ function handleRetweetClick(tweetId) {
 
 function handleReplyClick(replyId) {
     document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
+}
+
+function handleTweetBtnClick(){
+    
+    const tweetInput = document.getElementById("tweet-input")
+
+    if (tweetInput.value) {
+        // Build a new tweet object
+        const newTweet = {
+            handle: `@Nathan`,
+            profilePic: `images/mario-logo.jpg`,
+            likes: 0,
+            retweets: 0,
+            tweetText: tweetInput.value,
+            replies: [],
+            isLiked: false,
+            isRetweeted: false,
+            uuid: uuidv4()
+        }
+        tweetsData.unshift(newTweet)
+    }
+    tweetInput.value = ''
+    renderTweets()
 }
 
 function getFeedHtml() {
