@@ -1,11 +1,10 @@
 export const tweetsData = [   
     {
-        handle: `@TrollBot66756542 💎`,
-        profilePic: `images/troll.jpg`,
+        handle: `@arsenal_memes2 💎`,
+        profilePic: `images/arsenal.png`,
         likes: 27,
         retweets: 10,
-        tweetText: `Buy Bitcoin, ETH Make 💰💰💰 low low prices. 
-            Guaranteed return on investment. HMU DMs open!!`,
+        tweetText: `Is there any other club in history that has spent $350M in on yeaer and gotten worse?`,
         replies: [],
         isLiked: false,
         isRetweeted: false,
@@ -35,7 +34,7 @@ export const tweetsData = [
     },
         {
         handle: `@NoobCoder12`,
-        profilePic: `images/flower.png`,
+        profilePic: `images/linux.jpg`,
         likes: 10,
         retweets: 3,
         tweetText: `Are you a coder if you only know HTML?`,
