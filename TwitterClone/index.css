@@ -113,6 +113,13 @@ button {
     gap: 5px;
 }
 
+.tweet-reply{
+    border-top: 1px solid lightgray;
+    padding: 20px 0 0 0px;
+    margin: 10px 0 10px 40px;
+    width: 80%;
+}
+
 /* images */
 
 .twitter-logo {
@@ -139,4 +146,10 @@ button {
     height:48px;
     border: 1px solid lightgray;
     border-radius: 50%;
+}
+
+/* utility */
+
+.hidden{
+    display: none;
 }
