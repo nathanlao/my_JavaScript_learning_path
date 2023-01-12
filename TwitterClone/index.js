@@ -22,6 +22,8 @@ document.addEventListener('click', function(e) {
         handleReplyClick(e.target.dataset.reply)
     } else if (e.target.dataset.delete) {
         handleDeleteClick(e.target.dataset.delete)
+    } else if (e.target.id ==='switch') {
+        handleSwitchBtn()
     } else if (e.target.id === 'tweet-btn') {
         handleTweetBtnClick()
     }
@@ -97,6 +99,10 @@ function handleDeleteClick(tweetId) {
 
     saveToLocalStorage()
     renderTweets()
+}
+
+function handleSwitchBtn() {
+    document.body.classList.toggle('dark-mode')
 }
 
 function getFeedHtml() {
