@@ -18,8 +18,8 @@ document.addEventListener('click', function(e) {
         handleLikeClick(e.target.dataset.like)
     } else if (e.target.dataset.retweet) {
         handleRetweetClick(e.target.dataset.retweet)
-    } else if (e.target.dataset.reply) {
-        handleReplyClick(e.target.dataset.reply)
+    } else if (e.target.dataset.viewreply) {
+        handleReplyClick(e.target.dataset.viewreply)
     } else if (e.target.dataset.delete) {
         handleDeleteClick(e.target.dataset.delete)
     } else if (e.target.id ==='switch') {
@@ -145,9 +145,9 @@ function getFeedHtml() {
             <div class="tweet">
                 <div class="tweet-inner">
                     <img src="${tweet.profilePic}" class="profile-pic">
-                    <div>
-                        <p class="handle">${tweet.handle}</p>
-                        <p class="tweet-text">${tweet.tweetText}</p>
+                    <div class="view-reply" id="view-reply" data-viewreply="${tweet.uuid}">
+                        <p class="handle" data-viewreply="${tweet.uuid}" >${tweet.handle}</p>
+                        <p class="tweet-text" data-viewreply="${tweet.uuid}" >${tweet.tweetText}</p>
                         <div class="tweet-details">
                             <span class="tweet-detail">
                                 <i class="fa-regular fa-comment" 
