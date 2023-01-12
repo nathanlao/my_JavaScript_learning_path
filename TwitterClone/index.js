@@ -20,6 +20,8 @@ document.addEventListener('click', function(e) {
         handleRetweetClick(e.target.dataset.retweet)
     } else if (e.target.dataset.reply) {
         handleReplyClick(e.target.dataset.reply)
+    } else if (e.target.dataset.delete) {
+        handleDeleteClick(e.target.dataset.delete)
     } else if (e.target.id === 'tweet-btn') {
         handleTweetBtnClick()
     }
@@ -80,6 +82,19 @@ function handleTweetBtnClick(){
         tweetsArray.unshift(newTweet)
     }
     tweetInput.value = ''
+    saveToLocalStorage()
+    renderTweets()
+}
+
+function handleDeleteClick(tweetId) {
+    const targetTweetObj = tweetsArray.filter(function(tweet) {
+        return tweet.uuid === tweetId
+    })[0]
+    const targetTweetIndex = tweetsArray.indexOf(targetTweetObj)
+
+    // Remove the object from array by its index
+    tweetsArray.splice(targetTweetIndex, 1)
+
     saveToLocalStorage()
     renderTweets()
 }
@@ -146,8 +161,11 @@ function getFeedHtml() {
                                 ></i>
                                 ${tweet.retweets}
                             </span>
-                        </div>   
-                    </div>            
+                        </div>  
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-trash-can" data-delete="${tweet.uuid}"></i>
+                    </div>             
                 </div>
                 <div class="hidden" id="replies-${tweet.uuid}">
                     ${repliesHTML}
