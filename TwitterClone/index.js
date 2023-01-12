@@ -1,6 +1,16 @@
 import { tweetsData } from "./data.js"
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid'
 
+let tweetsArray = tweetsData
+
+// Parse Tweets from LS and render them
+let tweetsFromLocalStorage = JSON.parse(localStorage.getItem("myTweets"))
+if (tweetsFromLocalStorage) {
+    tweetsArray = tweetsFromLocalStorage
+    renderTweets()
+}
+// localStorage.clear()
+
 // Cover entire browser page and identify which icon is cliced
 document.addEventListener('click', function(e) {
     // check if clicked element has the data attribute
@@ -17,7 +27,7 @@ document.addEventListener('click', function(e) {
 
 function handleLikeClick(tweetId) {
     // Iterate the data and use uuid to identify the liked tweet object
-    const targetTweetObj = tweetsData.filter(function(tweet) { // -> shallow copy
+    const targetTweetObj = tweetsArray.filter(function(tweet) { // -> shallow copy
         return tweet.uuid === tweetId
     })[0] // object at postion 0 to targetTweetObj
 
@@ -28,11 +38,12 @@ function handleLikeClick(tweetId) {
     }
     // Flip the boolean to inverse state
     targetTweetObj.isLiked = !targetTweetObj.isLiked
+    saveToLocalStorage()
     renderTweets()
 }
 
 function handleRetweetClick(tweetId) {
-    const targetTweetObj = tweetsData.filter(function(tweet) {
+    const targetTweetObj = tweetsArray.filter(function(tweet) {
         return tweet.uuid === tweetId
     })[0]
     if (targetTweetObj.isRetweeted) {
@@ -41,6 +52,7 @@ function handleRetweetClick(tweetId) {
         targetTweetObj.retweets++
     }
     targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
+    saveToLocalStorage()
     renderTweets()
 }
 
@@ -49,7 +61,7 @@ function handleReplyClick(replyId) {
 }
 
 function handleTweetBtnClick(){
-    
+
     const tweetInput = document.getElementById("tweet-input")
 
     if (tweetInput.value) {
@@ -65,9 +77,10 @@ function handleTweetBtnClick(){
             isRetweeted: false,
             uuid: uuidv4()
         }
-        tweetsData.unshift(newTweet)
+        tweetsArray.unshift(newTweet)
     }
     tweetInput.value = ''
+    saveToLocalStorage()
     renderTweets()
 }
 
@@ -75,7 +88,7 @@ function getFeedHtml() {
 
     let feedHtml = ``
     // forEach tweet object inside tweetsData Array
-    tweetsData.forEach(function(tweet) { 
+    tweetsArray.forEach(function(tweet) { 
 
         let likeIconClass = ''
         let retweetIconClass = ''
@@ -143,6 +156,11 @@ function getFeedHtml() {
         `
     })
     return feedHtml
+}
+
+function saveToLocalStorage() {
+    // convert the array to string and save it in LS
+    localStorage.setItem("myTweets", JSON.stringify(tweetsArray))
 }
 
 function renderTweets() {
