@@ -15,7 +15,23 @@ Making progress by steps not by leaps...
 - `disabled` property in HTML to disable an element
 
 <p align="center">
-<img width="640" alt="cookie" src="https://user-images.githubusercontent.com/75557717/211181206-4ad22c0d-e4a1-4b9c-aca5-c9bc5fb0e09d.gif">
+<img width="600" alt="cookie" src="https://user-images.githubusercontent.com/75557717/211181206-4ad22c0d-e4a1-4b9c-aca5-c9bc5fb0e09d.gif">
 </p>
+
+
+## Twitter clone
+### Key concepts:
+- `textArea` for multiline input
+- `.forEach()` for rendering out multiple posts in object arrays
+- `data attributes` for identifing a target event
+- Conditionally render CSS classes
+- `CDNS` for adding icons from font awesome
+- Generating version 4 `uuid` 
+- Storing likes, retweets, tweets in `localStorage`
+
+<p align="center">
+<img width="640" alt="tweet" src="https://user-images.githubusercontent.com/75557717/212403827-1d81eeb8-5e93-43e0-94ad-2e61356062e1.gif">
+</p>
+
 
 
